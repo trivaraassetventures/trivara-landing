@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+  Fuente de la imagen para redes (Open Graph / Twitter).
+  Exporta a /public/og-image.png en 1200×630:
+    · Ábrelo en el navegador y captura el .card (1200×630), o
+    · npx playwright screenshot --viewport-size=1200,630 og.html og-image.png
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+    <style>
+      * { margin: 0; box-sizing: border-box; }
+      body { background: #1a1a1a; display: grid; place-items: center; }
+      .card {
+        width: 1200px;
+        height: 630px;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(700px 700px at 78% 50%, rgba(91,200,255,0.18), transparent 60%),
+          radial-gradient(420px 420px at 84% 46%, rgba(200,162,75,0.14), transparent 62%),
+          #05060a;
+        font-family: 'Inter', system-ui, sans-serif;
+        color: #f4f6fb;
+      }
+      .content { position: absolute; left: 88px; top: 50%; transform: translateY(-50%); max-width: 620px; }
+      .brand { font-size: 22px; letter-spacing: 0.34em; font-weight: 500; text-transform: uppercase; }
+      .headline { font-size: 64px; font-weight: 300; line-height: 1.08; margin-top: 34px; letter-spacing: -0.02em; }
+      .headline em { font-family: 'Instrument Serif', serif; font-style: italic; color: #c8a24b; }
+      .sub { color: #8a94a6; font-size: 22px; margin-top: 26px; max-width: 520px; line-height: 1.45; }
+      .chip { display: inline-block; margin-top: 40px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #5bc8ff; border: 1px solid rgba(91,200,255,0.4); border-radius: 100px; padding: 9px 18px; }
+      /* sphere mark on the right */
+      .sphere { position: absolute; right: 70px; top: 50%; transform: translateY(-50%); }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="content">
+        <div class="brand">TRIVARA <span style="font-size:14px;letter-spacing:0.25em;opacity:0.6">ASSET VENTURES</span></div>
+        <div class="headline">Tecnología propietaria<br />para los <em>mercados</em></div>
+        <div class="sub">Software de trading algorítmico, formación financiera y consultoría empresarial.</div>
+        <div class="chip">Holding tecnológico · Chipre HE 478995</div>
+      </div>
+      <svg class="sphere" width="360" height="360" viewBox="0 0 360 360">
+        <defs>
+          <linearGradient id="r" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#5bc8ff" /><stop offset="100%" stop-color="#c8a24b" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#r)" stroke-width="1.4" opacity="0.9">
+          <circle cx="180" cy="180" r="120" />
+          <ellipse cx="180" cy="180" rx="50" ry="120" />
+          <ellipse cx="180" cy="180" rx="90" ry="120" />
+          <ellipse cx="180" cy="180" rx="120" ry="50" />
+          <ellipse cx="180" cy="180" rx="120" ry="90" />
+        </g>
+        <g fill="#5bc8ff">
+          <circle cx="180" cy="60" r="3.5" /><circle cx="300" cy="180" r="3.5" />
+          <circle cx="180" cy="300" r="3.5" /><circle cx="60" cy="180" r="3.5" />
+        </g>
+        <circle cx="180" cy="180" r="5" fill="#c8a24b" />
+      </svg>
+    </div>
+  </body>
+</html>
